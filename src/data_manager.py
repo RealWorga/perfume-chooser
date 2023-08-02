@@ -17,5 +17,5 @@ def normalize_data(df):
         print("Incorrect data format. 'Likeability' and 'Price per ml' columns are required.")
 
 def compute_rewards(df):
-    df['rewards'] = 0.5 * df['norm_likeabilities'] + 0.5 * df['norm_price_per_ml']
+    df['rewards'] = 0.3 * df['norm_likeabilities'] + 0.7 * df['norm_price_per_ml']
     return df
