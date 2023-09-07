@@ -1,7 +1,7 @@
 from PIL import Image as PILImage
 import requests
 from io import BytesIO
-from config import pdf_output_path
+from config import PDF_OUTPUT_PATH
 
 from reportlab.lib.pagesizes import A4
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Image as RLImage
@@ -68,7 +68,7 @@ def generate_pdf(df):
         ]))
         data[i][1] = name_table
 
-    doc = SimpleDocTemplate(pdf_output_path, pagesize=A4)
+    doc = SimpleDocTemplate(PDF_OUTPUT_PATH, pagesize=A4)
     table = Table(data, colWidths=col_widths)
 
     min_rewards = df["Reward"].min()
