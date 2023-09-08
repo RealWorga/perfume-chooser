@@ -40,7 +40,7 @@ def combine_scores(data_lists):
 
 def write_combined_data_to_csv(data, output_filename):
     with open(os.path.join(CAT_OUTPUT_PATH, output_filename), 'w', newline='', encoding='utf-8-sig') as csvfile:
-        writer = csv.writer(csvfile)
+        writer = csv.writer(csvfile, delimiter=';')
         writer.writerow(["Perfume Name", "Combined Score"])
         sorted_data = sorted(data.items(), key=lambda x: x[1], reverse=True)
         for row in sorted_data:
